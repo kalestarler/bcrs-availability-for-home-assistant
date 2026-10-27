@@ -4,6 +4,10 @@ See at a glance whether your nearest **BCRS machine** (the Return Right reverse 
 
 It uses the same live information as the map on [recycle.gov.sg](https://www.recycle.gov.sg/materials/beverage).
 
+![A BCRS machine on a Home Assistant dashboard, showing Available and Open 24 hours](https://raw.githubusercontent.com/kalestarler/bcrs-availability-for-home-assistant/main/images/bcrs-card.gif)
+
+*Shown with the [Bubble Card version](#fancier-cards) of the card.*
+
 ## What you'll need
 
 - Home Assistant 2025.2 or newer

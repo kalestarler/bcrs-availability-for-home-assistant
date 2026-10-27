@@ -11,44 +11,49 @@ It uses the same live information as the map on [recycle.gov.sg](https://www.rec
 
 ## Install
 
-### 1. Add this to HACS
+You only do this once.
 
-Click this button and follow the prompts:
+### 1. Add this repository to HACS
 
-[![Open your Home Assistant instance and open this repository inside HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=kalestarler&repository=bcrs-availability-for-home-assistant&category=integration)
+1. In Home Assistant, click **HACS** in the sidebar.
+2. Click the **⋮** menu in the top-right corner and choose **Custom repositories**.
+3. In **Repository**, paste:
+   ```
+   https://github.com/kalestarler/bcrs-availability-for-home-assistant
+   ```
+4. In **Type**, choose **Integration**.
+5. Click **Add**, then close the dialog.
 
-<details>
-<summary>If the button doesn't work, add it by hand</summary>
+### 2. Download it
 
-1. In Home Assistant, open **HACS**.
-2. Click the **⋮** menu (top right) and choose **Custom repositories**.
-3. Paste `https://github.com/kalestarler/bcrs-availability-for-home-assistant`, set **Type** to **Integration**, and click **Add**.
-4. Search HACS for **BCRS Availability** and open it.
+1. In HACS, search for **BCRS Availability** and click it.
+2. Click **Download** (bottom right), then **Download** again to confirm.
 
-</details>
+### 3. Restart Home Assistant
 
-Then click **Download**.
+1. Go to **Settings → System**.
+2. Click the **power icon** in the top-right corner.
+3. Choose **Restart Home Assistant**.
 
-### 2. Restart Home Assistant
+Wait a minute or two for it to come back.
 
-Go to **Settings → System**, then click the power icon (top right) and choose **Restart Home Assistant**.
+## Add a BCRS machine
 
-### 3. Choose your machine
+Do this for each machine you want to track.
 
-Click this button:
+1. Go to **Settings → Devices & services**.
+2. Click **+ Add integration** (bottom right).
+3. Search for **BCRS Availability** and click it.
+4. Type either:
+   - part of the machine's name, such as `Tampines Mall`, or
+   - a **postal code**, such as `529510`, to list the 10 nearest machines.
+5. Click **Submit**.
+6. Pick your machine from the list, then click **Submit**.
+7. Optionally choose an area, then click **Finish**.
 
-[![Open your Home Assistant instance and start setting up BCRS Availability.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=bcrs_availability)
+The machine now shows up under **Settings → Devices & services → BCRS Availability**, with two sensors such as *FairPrice Tampines Mall Status* and *FairPrice Tampines Mall Hours today*.
 
-Or go to **Settings → Devices & services → Add integration** and search for **BCRS Availability**.
-
-Then type either:
-
-- part of the machine's name, such as `Tampines Mall`, or
-- your **postal code**, to list the 10 nearest machines.
-
-Pick your machine from the list. That's it.
-
-### 4. Put it on your dashboard
+## Put it on your dashboard
 
 1. Open your dashboard and click the **pencil** (edit) icon.
 2. Click **Add card**, then choose **Tile**.
@@ -81,10 +86,15 @@ The status can be:
 
 It checks for updates every 5 minutes.
 
-## Tracking more machines, or switching machines
+## Switching or removing a machine
 
-- **Add another machine:** go to **Settings → Devices & services → BCRS Availability** and click the **Add** button on that page. Or use the setup button in step 3 again.
-- **Switch to a different machine:** add the new one the same way, then delete the old one from that page with its **⋮** menu → **Delete**. Remember to update your dashboard card.
+To switch to a different machine, first add the new one using the steps in [Add a BCRS machine](#add-a-bcrs-machine).
+
+Then remove the old one:
+
+1. Go to **Settings → Devices & services → BCRS Availability**.
+2. Next to the machine you no longer want, click **⋮** and choose **Delete**.
+3. Update any dashboard card that used it.
 
 ## Fancier cards
 

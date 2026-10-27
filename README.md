@@ -122,7 +122,9 @@ To use one:
 
 This is a personal project. It's not affiliated with or endorsed by NEA, BCRS Ltd or recycle.gov.sg. It reads the public website's map data, which isn't an official API, so it may break if the website changes. To keep it polite, it checks each machine at most every 5 minutes.
 
-Postal code search uses [OneMap](https://www.onemap.gov.sg/).
+Postal code search uses [OneMap](https://www.onemap.gov.sg/). The icon uses the recycle symbol from [Material Design Icons](https://pictogrammers.com/library/mdi/) (Apache 2.0).
+
+It's only listed in HACS for Home Assistant instances set to Singapore, since BCRS machines only exist there.
 
 [MIT licence](LICENSE).
 

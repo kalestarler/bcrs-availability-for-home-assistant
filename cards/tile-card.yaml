@@ -1,0 +1,5 @@
+# Built-in tile card, nothing to install. You can also build this in the
+# visual editor: Add card > Tile > pick your machine's "Status" sensor.
+type: tile
+entity: sensor.fairprice_tampines_mall_status
+name: BCRS Tampines Mall

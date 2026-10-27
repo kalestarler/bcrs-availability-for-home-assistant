@@ -1,0 +1,17 @@
+# Mushroom template card (needs Mushroom v5+ from HACS).
+# Replace "fairprice_tampines_mall" with your machine's name in the 2 entity lines,
+# and change `primary` to whatever you want shown.
+type: custom:mushroom-template-card
+entity: sensor.fairprice_tampines_mall_status
+primary: BCRS · FairPrice Tampines Mall
+icon: mdi:recycle
+secondary: >-
+  {{ state_translated(entity) }} · today {{ states('sensor.fairprice_tampines_mall_hours_today') }}
+color: >-
+  {{ {'available': 'green', 'filling_fast': 'amber', 'maintenance': 'orange', 'full': 'red',
+  'out_of_service': 'red', 'removed': 'red'}.get(states(entity), 'disabled') }}
+badge_icon: >-
+  {{ 'mdi:alert-circle' if states(entity) in ['full', 'out_of_service', 'maintenance', 'removed'] else '' }}
+badge_color: red
+tap_action:
+  action: more-info

@@ -1,0 +1,22 @@
+{
+  "entity": {
+    "sensor": {
+      "status": {
+        "default": "mdi:recycle",
+        "state": {
+          "available": "mdi:recycle",
+          "filling_fast": "mdi:gauge",
+          "closed": "mdi:store-off",
+          "maintenance": "mdi:wrench",
+          "full": "mdi:delete-alert",
+          "out_of_service": "mdi:alert-circle",
+          "removed": "mdi:close-circle",
+          "not_launched": "mdi:clock-outline"
+        }
+      },
+      "hours_today": {
+        "default": "mdi:clock-outline"
+      }
+    }
+  }
+}

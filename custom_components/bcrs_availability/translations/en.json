@@ -1,0 +1,53 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Find your BCRS machine",
+        "description": "Type part of the machine's name, as shown on recycle.gov.sg (for example \"Tampines Mall\"). Or type a 6-digit postal code to list the nearest machines.",
+        "data": {
+          "search": "Machine name or postal code"
+        }
+      },
+      "pick": {
+        "title": "Pick your machine",
+        "description": "Found {count} machine(s). Pick the one you want to track.",
+        "data": {
+          "machine": "Machine"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Couldn't reach recycle.gov.sg. Try again in a minute.",
+      "no_match": "No machines match that. Try fewer words, or a postal code.",
+      "postal_code_not_found": "That postal code wasn't found."
+    },
+    "abort": {
+      "already_configured": "This machine is already set up."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "available": "Available",
+          "filling_fast": "Filling fast",
+          "closed": "Closed",
+          "maintenance": "Maintenance",
+          "full": "Full",
+          "out_of_service": "Out of service",
+          "removed": "Removed",
+          "not_launched": "Not launched"
+        },
+        "state_attributes": {
+          "machine_status": { "name": "Machine status (raw)" },
+          "opening_hours": { "name": "Opening hours" },
+          "remarks": { "name": "Remarks" }
+        }
+      },
+      "hours_today": {
+        "name": "Hours today"
+      }
+    }
+  }
+}

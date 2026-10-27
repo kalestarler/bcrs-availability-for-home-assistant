@@ -1,0 +1,35 @@
+# Bubble Card button (needs Bubble Card v3.4+ from HACS).
+# Replace "fairprice_tampines_mall" with your machine's name in the 3 entity lines,
+# and change `name` to whatever you want shown.
+type: custom:bubble-card
+card_type: button
+button_type: name
+name: BCRS Tampines Mall
+icon: mdi:recycle
+entity: sensor.fairprice_tampines_mall_status
+tap_action:
+  action: more-info
+button_action:
+  tap_action:
+    action: more-info
+sub_button:
+  - entity: sensor.fairprice_tampines_mall_status
+    state_content: state
+    show_background: true
+    tap_action:
+      action: more-info
+  - entity: sensor.fairprice_tampines_mall_hours_today
+    state_content: state
+    show_background: true
+    tap_action:
+      action: more-info
+styles: |
+  {% set colour = {'available': 'var(--green-color)', 'filling_fast': 'var(--amber-color)',
+    'maintenance': 'var(--orange-color)', 'full': 'var(--red-color)', 'out_of_service': 'var(--red-color)',
+    'removed': 'var(--red-color)'}.get(states(entity), 'var(--disabled-color)') %}
+  .bubble-sub-button-1 {
+    background-color: {{ colour }} !important;
+  }
+  .bubble-icon {
+    color: {{ colour }} !important;
+  }
